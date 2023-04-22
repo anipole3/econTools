@@ -270,10 +270,14 @@ class EdgeworthBox():
             plt.show()
         else:
             return ax3
-    def plot_all(self, ax):
+    def plot_all(self, ax, show=True):
         """This method plots everything: indifference curves, pareto improvements and the contract curve."""
         ax = self.plot_indff_curves(ax, show=False)
         ax = self.pareto_improvements(ax, show=False)
         ax = self.contract_curve(ax, show=False)
-        ax.legend()
-        plt.show()
+        
+        if show:
+            ax.legend()
+            plt.show()
+        else:
+            ax.legend()
